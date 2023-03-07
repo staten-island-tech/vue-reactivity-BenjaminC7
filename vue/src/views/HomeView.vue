@@ -1,4 +1,5 @@
 <template>
+  <CoolCard></CoolCard>
   <h1 v-if="selected === 'A'">A</h1>
   <h1 v-else-if="selected === 'B'">B</h1>
   <h1 v-else-if="selected === 'C'">C</h1>
@@ -10,7 +11,11 @@
   </select>
 </template>
 <script>
+import CoolCard from "./CoolCard.vue";
 export default {
+  components: {
+    CoolCard,
+  },
   data() {
     return {
       graduated: false,
