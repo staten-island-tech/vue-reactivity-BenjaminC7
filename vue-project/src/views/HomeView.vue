@@ -7,6 +7,7 @@
     <input type="text" placeholder="edit me" v-model="message" />
     <p>{{ message }}</p>
   </div>
+  <h2>{{ now }}</h2>
 </template>
 
 <script>
@@ -28,6 +29,12 @@ export default {
       } else {
         this.loggedIn = false;
       }
+    },
+  },
+  computed: {
+    now: function () {
+      const time = new Date();
+      return `${time.getHours()}:${time.getMinutes()}`;
     },
   },
 };
