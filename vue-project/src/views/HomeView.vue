@@ -8,12 +8,16 @@
     <p>{{ message }}</p>
   </div>
   <h2>{{ now }}</h2>
+  <ButtonComp>This text can change</ButtonComp>
 </template>
 
 <script>
+import ButtonComp from "../components/ButtonComp.vue";
 export default {
   name: "Home",
-  components: {},
+  components: {
+    ButtonComp,
+  },
   data() {
     return {
       loggedIn: true,

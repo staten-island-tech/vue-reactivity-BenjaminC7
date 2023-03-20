@@ -1,9 +1,20 @@
 <template>
-  <div></div>
+  <button><slot></slot></button>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "ButtonComp",
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+  width: 200px;
+  font-size: 30px;
+  border-radius: 20px;
+  border: none;
+  background-color: red;
+  color: white;
+}
+</style>
