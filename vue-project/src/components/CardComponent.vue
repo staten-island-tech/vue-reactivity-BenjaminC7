@@ -1,12 +1,21 @@
 <template>
   <div class="item">
-    <h3><slot name="monsterName"></slot></h3>
-    <img id="img" src="" alt="" />
-    <p id="price">Price: <slot name="monsterPrice"></slot></p>
+    <h3>{{ name }}</h3>
+    <img id="img" v-bind:src="image" alt="" />
+    <p id="price">Price: {{ price }}</p>
     <button id="purchaseBtn">Purchase</button>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "CardComponent",
+  props: {
+    name: String,
+    price: String,
+    image: String,
+  },
+};
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss"></style>

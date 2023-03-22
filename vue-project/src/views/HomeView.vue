@@ -1,6 +1,12 @@
 <template>
   <div>
-    <li v-for="item in items" :key="item">{{ item.name }}</li>
+    <CardComponent
+      v-for="item in items"
+      :key="item"
+      :name="item.name"
+      :price="item.price"
+      v-bind:image="item.image"
+    />
   </div>
 </template>
 
@@ -148,8 +154,135 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
+:root {
+  /*Colors*/
+  --light-blue: #3f51b5;
+  --dark-blue: #303f9f;
+  --purple: #7c4dff;
+  --light-amber: #ffc107;
+  --dark-amber: #ffa000;
+  --orange: #ff5722;
+  --gray: #252c30;
+  --black: #000;
+
+  /*Typography*/
+  --h1: 7.594rem;
+  --h2: 5.063rem;
+  --h3: 3.375rem;
+  --h4: 2.25rem;
+  --h5: 1.5rem;
+
+  /*Intentions*/
+  --primary: ;
+  --secondary: ;
+}
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--secondary);
+}
+.head {
+  border: 1rem solid var(--accent);
+  background-color: var(--primary);
+}
+
+.main {
+  background-color: var(--secondary);
+  height: 100vh;
+}
+
 h1 {
-  color: blue;
+  font-size: var(--h1);
+  text-align: center;
+}
+h2 {
+  font-size: var(--h2);
+  text-align: center;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  flex-wrap: wrap;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  padding: 2rem 3rem;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 10rem;
+  transition: all 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
+}
+#list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 2rem;
+  background-color: var(--primary);
+  border: 0.5rem solid var(--accent);
+  border-radius: 3rem;
+}
+#img {
+  width: 25rem;
+  height: 20rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  border: 0.5rem solid var(--accent);
+  border-radius: 3rem;
+}
+h3 {
+  font-size: var(--h3);
+  text-align: center;
+}
+#price {
+  font-size: var(--h4);
+  text-align: center;
+  margin-top: 1rem;
+}
+#purchaseBtn {
+  text-decoration: none;
+  padding: 2rem 3rem;
+  display: block;
+  font-size: 2rem;
+  border: none;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#purchaseBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 0.5rem rgba(0, 0, 0, 0.2);
+}
+#description {
+  font-size: var(--h4);
+  text-align: center;
 }
 </style>
