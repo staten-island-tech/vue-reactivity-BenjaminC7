@@ -2,7 +2,7 @@
   <div class="item">
     <h3>{{ name }}</h3>
     <img id="img" v-bind:src="image" alt="" />
-    <p id="price">Price: {{ price }}</p>
+    <p id="price">Price: ${{ price }}</p>
     <button id="purchaseBtn">Purchase</button>
   </div>
 </template>
@@ -18,4 +18,4 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style></style>

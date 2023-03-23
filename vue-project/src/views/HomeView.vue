@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="list">
     <CardComponent
       v-for="item in items"
       :key="item"
@@ -137,21 +137,8 @@ export default {
       ],
     };
   },
-  methods: {
-    authState: function () {
-      if (this.loggedIn === false) {
-        this.loggedIn = true;
-      } else {
-        this.loggedIn = false;
-      }
-    },
-  },
-  computed: {
-    now: function () {
-      const time = new Date();
-      return `${time.getHours()}:${time.getMinutes()}`;
-    },
-  },
+  methods: {},
+  computed: {},
 };
 </script>
 <style>
@@ -174,8 +161,6 @@ export default {
   --h5: 1.5rem;
 
   /*Intentions*/
-  --primary: ;
-  --secondary: ;
 }
 html,
 body,
@@ -184,17 +169,18 @@ body,
   padding: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  color: #000;
 }
 body {
-  background-color: var(--secondary);
+  background-color: var(--dark-blue);
 }
 .head {
-  border: 1rem solid var(--accent);
-  background-color: var(--primary);
+  border: 1rem solid var(--purple);
+  background-color: var(--light-blue);
 }
 
 .main {
-  background-color: var(--secondary);
+  background-color: var(--dark-blue);
   height: 100vh;
 }
 
@@ -210,7 +196,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary);
+  background-color: var(--dark-blue);
   flex-wrap: wrap;
 }
 .btn,
@@ -241,8 +227,8 @@ h2 {
   margin-left: 2rem;
   margin-right: 2rem;
   padding: 2rem;
-  background-color: var(--primary);
-  border: 0.5rem solid var(--accent);
+  background-color: var(--light-blue);
+  border: 0.5rem solid var(--purple);
   border-radius: 3rem;
 }
 #img {
@@ -252,7 +238,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
-  border: 0.5rem solid var(--accent);
+  border: 0.5rem solid var(--purple);
   border-radius: 3rem;
 }
 h3 {

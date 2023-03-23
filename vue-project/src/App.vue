@@ -4,7 +4,12 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header>
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </div>
   </header>
 
   <RouterView />
@@ -70,6 +75,9 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
+  }
+  body {
+    background-color: #303f9f;
   }
 }
 </style>
