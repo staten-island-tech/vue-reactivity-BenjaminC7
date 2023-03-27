@@ -1,4 +1,13 @@
 <template>
+  <div class="head">
+    <h1>Monster Marketplace 2: Back in Buisness</h1>
+    <p id="description">
+      Your new and improved one stop shop for exotic pets and dungeon guards!
+    </p>
+  </div>
+  <h2>Cart:</h2>
+  <div id="cart"></div>
+  <h2>Store:</h2>
   <div id="list">
     <CardComponent
       v-for="item in items"
@@ -11,7 +20,7 @@
 </template>
 
 <script>
-import CardComponent from "../components/CardComponent.vue";
+import CardComponent from "../src/components/CardComponent.vue";
 export default {
   name: "Home",
   components: {
@@ -191,6 +200,11 @@ h1 {
 h2 {
   font-size: var(--h2);
   text-align: center;
+  border: 1rem solid var(--purple);
+  background-color: var(--light-blue);
+  margin-top: 2rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 .btns {
   display: flex;
