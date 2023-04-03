@@ -5,18 +5,34 @@
       Your new and improved one stop shop for exotic pets and dungeon guards!
     </p>
   </div>
-  <h2>Cart:</h2>
-  <div id="cart"></div>
-  <h2>Store:</h2>
-  <div id="list">
-    <CardComponent
-      v-for="item in items"
-      :key="item"
+<div id="main">
+  <div id="store">
+    <h2>Store:</h2>
+   <div id="list">
+    <div class="item" v-for="item in items" :key="item">
+      <CardComponent
       :name="item.name"
       :price="item.price"
       v-bind:image="item.image"
-    />
+      />
+      <button id="purchaseBtn" @click="addToCart(item.name, item.price, item.image)">Purchase</button>
+    </div>
+   </div>
   </div>
+  <div id="cart">
+    <h2>Cart:</h2>
+   <div id="list">  
+    <div class="item" v-for="item in CartItems" :key="item">
+      <CardComponent
+      :name="item.name"
+      :price="item.price"
+      v-bind:image="item.image"
+      />
+      <button id="purchaseBtn" @click="removeFromCart(item)">Remove</button>
+    </div>
+   </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -144,9 +160,21 @@ export default {
           categories: ["undead"],
         },
       ],
+      CartItems: [],
     };
   },
-  methods: {},
+  methods: {
+    addToCart(name, price, image){
+     this.CartItems.push({
+      name: name,
+      image: image,
+      price: price,
+     })
+    },
+    removeFromCart(item){
+      this.CartItems = this.CartItems.filter((i) => i !== item) 
+    },
+  },
   computed: {},
 };
 </script>
@@ -235,6 +263,15 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+#main{
+  display: flex;
+}
+#store{
+  width: 50%;
+}
+#cart{
+  width: 50%;
 }
 .item {
   margin-top: 2rem;
